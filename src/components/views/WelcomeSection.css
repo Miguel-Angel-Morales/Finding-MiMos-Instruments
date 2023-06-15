@@ -1,0 +1,93 @@
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    padding: 50px;
+}
+
+.welcome-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Main Title */
+.title--main {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #2c387e;
+}
+
+/* CSS for centering the form elements */
+.form-container input {
+    text-align: center; 
+    display: flex;
+    align-items: center;
+    width: 50%;
+        min-width: 500px;
+}
+
+.input-field { 
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    /* Adjust the maximum width as desired */
+}
+
+.button-container {
+    text-align: center;
+    /* Adjust the alignment as desired */
+    margin-top: 10px;
+}
+
+.Homepage-add-instruments-section {
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+
+/* .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-field {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 10px;
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.button-container button {
+    margin: 0 5px;
+} */

@@ -4,12 +4,14 @@
     justify-content: left;
 }
 
-.navbar__item {
+.navbar__inventory_page {
     flex-basis: 20%;
     list-style-type: none;
 }
 
 .navbar__logout {
     margin-left: auto;
+    flex-basis: 10%;
+    list-style-type: none;
 }
 

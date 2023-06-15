@@ -5,8 +5,7 @@ import "./Login.css"
 export const Register = (props) => {
     const [customer, setCustomer] = useState({
         email: "",
-        fullName: "",
-        isStaff: false
+        name: "",
     })
     let navigate = useNavigate()
 
@@ -22,8 +21,7 @@ export const Register = (props) => {
             .then(createdUser => {
                 if (createdUser.hasOwnProperty("id")) {
                     localStorage.setItem("mimo_user", JSON.stringify({
-                        id: createdUser.id,
-                        staff: createdUser.isStaff
+                        id: createdUser.id
                     }))
 
                     navigate("/")
