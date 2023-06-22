@@ -18,7 +18,7 @@ const InstrumentForm = () => {
 
 const user = JSON.parse(localStorage.getItem("mimo_user"));
 
-    // Generate a unique ID for the new instrument (you can customize this according to your requirements)
+    // Generate a unique ID for the new instrument (you can customize this)
     const newInstrumentId = Date.now();
 
     // Create the new instrument object

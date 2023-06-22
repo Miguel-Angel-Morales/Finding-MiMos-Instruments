@@ -7,7 +7,7 @@ const InventoryList = () => {
     const [editInstrumentName, setEditInstrumentName] = useState('');
 
     useEffect(() => {
-        // Fetch instruments associated with the logged-in user
+        // Fetch instruments associated with the logged-in user/
         const user = JSON.parse(localStorage.getItem("mimo_user"));
 
         fetch(`http://localhost:8088/instruments?userId=${user.id}`)
@@ -17,7 +17,8 @@ const InventoryList = () => {
         fetch('http://localhost:8088/instrumentTypes')
             .then(response => response.json())
             .then(data => setInstrumentTypes(data));
-    }, []);
+    }, []);// [] indicates that the effect should only run once, when the component mounts for the first time.
+
 
     const handleEdit = (id, name) => {
         setEditInstrumentId(id);
@@ -73,14 +74,14 @@ const InventoryList = () => {
     const getCategorizedInstruments = () => {
         const categorizedInstruments = {};
 
-        instrumentTypes.forEach(type => {
-            categorizedInstruments[type.type] = [];
+        instrumentTypes.forEach(categorizedType => {
+            categorizedInstruments[categorizedType.type] = [];
         });
 
         instruments.forEach(instrument => {
-            const type = instrumentTypes.find(type => type.id === instrument.instrumentTypeId);
-            if (type) {
-                categorizedInstruments[type.type].push(instrument);
+            const InstType = instrumentTypes.find(categorizedType => categorizedType.id === instrument.instrumentTypeId);
+            if (InstType) {
+                categorizedInstruments[InstType.type].push(instrument);
             }
         });
 
@@ -112,8 +113,8 @@ const InventoryList = () => {
                                 ) : (
                                     <>
                                         {instrument.name}
-                                            <button className="edit-button" onClick={() => handleEdit(instrument.id, instrument.name)}>Edit</button>
-                                            <button className="delete-button" onClick={() => handleDelete(instrument.id)}>Delete</button>
+                                        <button className="edit-button" onClick={() => handleEdit(instrument.id, instrument.name)}>Edit</button>
+                                        <button className="delete-button" onClick={() => handleDelete(instrument.id)}>Delete</button>
                                     </>
                                 )}
                             </li>
@@ -124,5 +125,7 @@ const InventoryList = () => {
         </div>
     );
 }
+
+
 
 export default InventoryList;

@@ -16,7 +16,7 @@ const WelcomeSection = () => {
 	);
 };
 
-export const HomePage = ({ onAddInstrument }) => {
+export const HomePage = () => {
 	return (
 		<>
 			<h1 className="title--main">
@@ -24,7 +24,7 @@ export const HomePage = ({ onAddInstrument }) => {
 			</h1>
 			<WelcomeSection />
 			<div className="Homepage-add-instruments-section">
-			<InstrumentForm onAddInstrument={onAddInstrument} />
+				<InstrumentForm />
 			</div>
 		</>
 	);

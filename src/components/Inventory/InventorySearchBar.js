@@ -19,14 +19,15 @@ const InventorySearchBar = ({ onFilter }) => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleFilter = (e) => {
         e.preventDefault();
+        // Pass the search term and selected types to the parent component
         onFilter(searchTerm, selectedTypes);
     };
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleFilter}>
                 <input type="text" value={searchTerm} onChange={handleSearchChange} placeholder="Search by name" />
                 <div>
                     <label>

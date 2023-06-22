@@ -4,11 +4,11 @@ import { HomePage } from "./views/HomePage"
 import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
-import "./Repairs.css"
+import "./NavigationRouter.css"
 import InventoryPage from "./Inventory/InventoryPage"
 
 
-export const Repairs = () => {
+export const NavigationRouter = () => {
 	return <Routes>
 		<Route path="/login" element={<Login />} />
 		<Route path="/register" element={<Register />} />
