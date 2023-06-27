@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const InventoryList = () => {
+const InventoryList = ({filterTerm, filterTypes}) => {
     const [instruments, setInstruments] = useState([]);
     const [instrumentTypes, setInstrumentTypes] = useState([]);
     const [editInstrumentId, setEditInstrumentId] = useState(null);
@@ -78,18 +78,26 @@ const InventoryList = () => {
             categorizedInstruments[categorizedType.type] = [];
         });
 
-        instruments.forEach(instrument => {
-            const InstType = instrumentTypes.find(categorizedType => categorizedType.id === instrument.instrumentTypeId);
-            if (InstType) {
-                categorizedInstruments[InstType.type].push(instrument);
+        const filteredInstruments = instruments.filter(instrument => {
+            const instrumentType = instrumentTypes.find(type => type.id === instrument.instrumentTypeId);
+            return (
+                instrument.name.toLowerCase().includes(filterTerm.toLowerCase()) &&
+                (filterTypes.length === 0 || filterTypes.includes(instrument.instrumentTypeId.toString())) &&
+                instrumentType // Make sure the instrument has a valid instrument type
+            );
+        });
+
+        filteredInstruments.forEach(instrument => {
+            const instrumentType = instrumentTypes.find(type => type.id === instrument.instrumentTypeId);
+            if (instrumentType) {
+                categorizedInstruments[instrumentType.type].push(instrument);
             }
         });
 
         return categorizedInstruments;
     };
 
-    const categorizedInstruments = getCategorizedInstruments();
-
+    const categorizedInstruments = getCategorizedInstruments()
     return (
         <div>
             <h2>Instrument List</h2>
