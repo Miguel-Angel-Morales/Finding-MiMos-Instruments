@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
+
 const InventorySearchBar = ({ onFilter }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedTypes, setSelectedTypes] = useState([]);
@@ -26,9 +27,10 @@ const InventorySearchBar = ({ onFilter }) => {
     };
 
     return (
-        <div>
+        <div className='RadioButtons'>
             <form onSubmit={handleFilter}>
                 <input type="text" value={searchTerm} onChange={handleSearchChange} placeholder="Search by name" />
+               <div className='RadioBoxes'>
                 <div>
                     <label>
                         <input
@@ -83,6 +85,7 @@ const InventorySearchBar = ({ onFilter }) => {
                         />
                         Amp's Cabinets & PA's
                     </label>
+                </div>
                 </div>
                 <button type="submit">Search</button>
             </form>

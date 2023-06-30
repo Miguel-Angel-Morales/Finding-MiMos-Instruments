@@ -2,16 +2,24 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: left;
+    color: rgb(32, 32, 32);
+    block-size: 25px;
 }
 
 .navbar__inventory_page {
     flex-basis: 20%;
     list-style-type: none;
+    color: rgb(32, 32, 32);
 }
 
 .navbar__logout {
     margin-left: auto;
     flex-basis: 10%;
     list-style-type: none;
+    color: rgb(32, 32, 32);
 }
 
+a {
+  color: rgb(32, 32, 32);
+/* Forcefully change the color to red */
+  }

@@ -5,6 +5,7 @@ import InventoryList from './InventoryList';
 import { NavBar } from '../nav/NavBar';
 import "./Inventory.css";
 
+
 const InventoryPage = () => {
     const [filterTerm, setFilterTerm] = useState('');
     const [filterTypes, setFilterTypes] = useState([]);
@@ -17,11 +18,12 @@ const InventoryPage = () => {
     return (
         <div>
             <NavBar />
+            <div className='background-image'></div>
             <h1>
                 <Link to="/">Finding MiMo's Instruments</Link>
             </h1>
             <h2>Inventory Page</h2>
-            <InventorySearchBar onFilter={handleFilter} />
+            <div className='InventorySearchBar' ><InventorySearchBar onFilter={handleFilter} /></div>
             <InventoryList filterTerm={filterTerm} filterTypes={filterTypes} />
         </div>
     );

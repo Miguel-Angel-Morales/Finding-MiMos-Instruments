@@ -100,7 +100,7 @@ const InventoryList = ({filterTerm, filterTypes}) => {
     const categorizedInstruments = getCategorizedInstruments()
     return (
         <div>
-            <h2>Instrument List</h2>
+            <h3>Instrument List</h3>
             {Object.keys(categorizedInstruments).map(type => (
                 <div key={type}>
                     <h3>{type}</h3>
